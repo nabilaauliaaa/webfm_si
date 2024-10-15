@@ -16,7 +16,7 @@ const Gallery = () => {
   }, []);
 
   const getDataGallery = () => {
-    getData("/api/nature")
+    getData("/api/natures")
       .then((resp) => {
         if (resp) {
           setDataSource(resp);
@@ -31,6 +31,7 @@ const Gallery = () => {
       <p>This is the gallery page content editt.</p>
 
       <Divider />
+      
       {dataSource.length > 0 ?  <List
         grid={{
           gutter: 16,
@@ -44,7 +45,7 @@ const Gallery = () => {
         renderItem={(item) => (
           <List.Item>
             <Card
-              cover={<img src={item.photo} alt="categories-image" />}
+              cover={<img src={item?.url_photo} alt= {item?.name_natures} />}
               actions={[
                 <EditOutlined key="edit" />,
                 <DeleteOutlined key="delete" />,
@@ -52,15 +53,15 @@ const Gallery = () => {
             >
               <Card.Meta
                 avatar={<CheckCircleOutlined />}
-                title={item.name}
+                title={item?.name_natures}
                 description={`Posted: ${formatDateIndonesia(
-                  item.description
+                  item?.created_at
                 )}`}
               />
             </Card>
           </List.Item>
         )}
-      />: "No Data"}
+      /> : "No Data"}
 
      
     </div>
