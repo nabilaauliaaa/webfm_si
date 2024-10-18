@@ -216,6 +216,21 @@ function Sidenav({ color }) {
         </NavLink>
       ),
     },
+
+
+    
+    {
+      key: "7",
+      label: "Extra",
+      className: "menu-item-header",
+    },
+
+
+    {
+      key: "8",
+      label: "Gallery Section",
+      className: "menu-item-header",
+    },
     {
       key: "/Gallery",
       label: (
@@ -232,11 +247,7 @@ function Sidenav({ color }) {
         </NavLink>
       ),
     },
-    {
-      key: "7",
-      label: "Extra",
-      className: "menu-item-header",
-    },
+
   ];
 
   const handleMenuKey = (key) => {
