@@ -28,6 +28,8 @@ const LoginPage = () => {
     navigate("/dashboard", { replace: true });
   };
 
+  const isFormValid = username !== "" && password !== "" ;
+
 
   return (
     <Layout className="layout-default layout-signin">
@@ -98,8 +100,10 @@ const LoginPage = () => {
               <Form.Item>
                 <Button
                   type="primary"
-                  htmlType="submit"
+                  htmlType="submit" 
                   style={{ width: "100%" }}
+                  disabled={!isFormValid}
+              
                 >
                   SIGN IN
                 </Button>
